@@ -36,7 +36,8 @@ public class HomeTest extends BaseTest {
 
     @Test(testName = "US305 - Footer of the page should be © 2022 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy")
     public void testOksana() {
-        String expected = "US305 - Footer of the page should be © 2022 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy";
+        homePage.testErik01();
+        String expected = "© 2022 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy";
         String actual = homePage.getText(homePage.footerNaming);
         Assert.assertEquals(expected, actual);
 
