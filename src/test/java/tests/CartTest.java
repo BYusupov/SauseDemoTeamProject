@@ -14,6 +14,7 @@ public class CartTest extends BaseTest {
     public void setUp() {
         page = new CartPage(driver);
     }
+
     @Test(testName = "US308 - Checkout:Your Information")
     public void testAlex01() {
         driver.findElement(By.id("user-name")).sendKeys("standard_user");

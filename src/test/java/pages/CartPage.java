@@ -7,10 +7,11 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class CartPage extends BasePage {
-    public CartPage(WebDriver driver){
+    public CartPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
     }
+
     @FindBy(xpath = "//a[@class='shopping_cart_link']")
     public WebElement shoppingCartBtn;
 
