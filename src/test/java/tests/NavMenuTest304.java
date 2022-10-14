@@ -15,7 +15,7 @@ public class NavMenuTest304 extends BaseTest {
     @BeforeMethod(alwaysRun = true)
     public void setUp() {
         page = new NavMenuPage304(driver);
-        page.usernameInput.sendKeys(ConfigReader.readProperty("userName"));
+        page.usernameInput.sendKeys(ConfigReader.readProperty("username"));
         page.passwordInput.sendKeys(ConfigReader.readProperty("password"));
         page.loginBtn.click();
     }
