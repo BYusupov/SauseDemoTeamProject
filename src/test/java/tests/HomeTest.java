@@ -32,6 +32,7 @@ public class HomeTest extends BaseTest {
     @Test(testName = "US 302 - error message = Epic sadface: Sorry, this user has been locked out displays")
     public void testErik02() {
 
+
         String expected = "Epic sadface: Sorry, this user has been locked out displays";
         String actual = driver.findElement(By.xpath("//h3")).getText();
         Assert.assertEquals(expected, actual);
