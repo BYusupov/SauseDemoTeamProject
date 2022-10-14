@@ -25,5 +25,9 @@ public class HomeTest extends BaseTest {
         System.out.println("Burkhon");
     }
 
+    @Test(testName = "US 306 - Filter options")
+    public void US306(){
+
+    }
 
 }

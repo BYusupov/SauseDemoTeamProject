@@ -15,4 +15,7 @@ public class HomePage extends BasePage {
 
     @FindBy(id = "sample")
     public WebElement sampleElement;
+
+    @FindBy(xpath = "//select[@class='product_sort_container']")
+    public WebElement filter;
 }
