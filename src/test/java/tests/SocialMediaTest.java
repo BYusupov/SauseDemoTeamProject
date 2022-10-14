@@ -15,33 +15,16 @@ public class SocialMediaTest extends BaseTest {
     @BeforeMethod(alwaysRun = true)
     public void setUp(){
         driver.findElement(By.linkText("Saucedemo")).click();
-
         page = new SocialMediaPage(driver);
     }
     @Test(testName = "US 307 - Verify social media buttons present twitter, facebook and linkedIn")
-    public void test307(){
+    public void test307() {
 
-        // click on the icons
-        page.click(page.twitterbtn);
-        page.click(page.facebookbtn);
-        page.click(page.linkedinbtn);
+        // verify twitter, fb an In present
+        Assert.assertTrue(page.twitterbtn.isDisplayed());
+        Assert.assertTrue(page.facebookbtn.isDisplayed());
+        Assert.assertTrue(page.linkedinbtn.isDisplayed());
 
-        //switching to each window
-        String mainWindowID = driver.getWindowHandle();
-        ArrayList<String> tab = new ArrayList<String>(driver.getWindowHandles());
-        Set<String> allWindowIDs = driver.getWindowHandles();
-
-        for(String each: allWindowIDs){
-            if (!each.equals(mainWindowID)) {
-                driver.switchTo().window(each);
-                if(driver.getTitle().equals("SauceLabs(@saucelabs);Twitter")){
-                    break;
-                }
-
-            }
-            Assert.assertTrue(true);
-        }
     }
-
 }
 
