@@ -20,7 +20,7 @@ public class HomePage extends BasePage {
 
     @FindBy(xpath = "//div[@class=\"footer_copy\"]")
     public WebElement footerNaming;
-}
+
 
     @FindBy(xpath = "//select[@class='product_sort_container']")
     public WebElement filter;
