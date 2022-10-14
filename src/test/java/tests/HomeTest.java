@@ -22,7 +22,10 @@ public class HomeTest extends BaseTest {
     @Test(testName = "US 301 - verify standard user can log in with right password")
     public void testErik01() {
 
-        homePage.testErik01();
+        driver.findElement(By.id("user-name")).sendKeys("username");
+        driver.findElement(By.id("password")).sendKeys("password");
+        driver.findElement(By.id("login-button")).click();
+
 
     }
 
@@ -46,6 +49,23 @@ public class HomeTest extends BaseTest {
     @Test(testName = "US 306 - Filter options")
     public void US306() {
         homePage.testErik01();
+
+    }
+    @Test(testName ="US 303 - Display same images" )
+    public void testErik03(){
+        driver.findElement(By.id("user-name")).sendKeys("problemUser");
+        driver.findElement(By.id("password")).sendKeys("password");
+        driver.findElement(By.id("login-button")).click();
+
+       // //div[@class='inventory_container'] contains
+
+        //driver.findElement(By.xpath("//div[@class='inventory_item_img']")).isDisplayed());
+
+
+
+
+
+
 
     }
 }
