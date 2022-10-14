@@ -1,6 +1,7 @@
 package tests;
 
 import base.BaseTest;
+
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -16,14 +17,22 @@ public class HomeTest extends BaseTest {
         page = new HomePage(driver);
     }
 
+    @Test(testName = "Google title test")
+    public void test01() {
+        page.assertEquals(driver.getTitle(), "Google");
+    }
+
+    @Test(testName = "Google title test")
+    public void burkhon() {
+        System.out.println("Burkhon");
+    }
+
     @Test(testName = "US 301 - verify standard user can log in with right password")
     public void testErik01() {
-
 
         driver.findElement(By.id("user-name")).sendKeys("standard_user");
         driver.findElement(By.id("password")).sendKeys("secret_sauce");
         driver.findElement(By.id("login-button")).click();
-
 
     }
 
@@ -48,4 +57,8 @@ public class HomeTest extends BaseTest {
 
     }
 }
+
+
+
+
 
