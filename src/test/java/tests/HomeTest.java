@@ -54,8 +54,13 @@ public class HomeTest extends BaseTest {
     public void testErik03(){
         driver.findElement(By.id("user-name")).sendKeys("problemUser");
         driver.findElement(By.id("password")).sendKeys("password");
+        driver.findElement(By.id("login-button")).click();
 
-        driver.findElement(By.xpath("//div[@class='inventory_item_img']")).isDisplayed();
+       //driver.findElement(By.xpath("//div[@class='inventory_item_img']")).isDisplayed());
+
+
+
+
 
 
     }
