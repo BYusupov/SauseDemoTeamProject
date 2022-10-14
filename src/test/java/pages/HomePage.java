@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import utils.ConfigReader;
 
 public class HomePage extends BasePage {
 
@@ -23,6 +24,14 @@ public class HomePage extends BasePage {
 
     @FindBy(xpath = "//select[@class='product_sort_container']")
     public WebElement filter;
+
+    public void testErik01() {
+
+        driver.findElement(By.id("user-name")).sendKeys(ConfigReader.readProperty("username"));
+        driver.findElement(By.id("password")).sendKeys(ConfigReader.readProperty("password"));
+        driver.findElement(By.id("login-button")).click();
+
+    }
 
 }
 
