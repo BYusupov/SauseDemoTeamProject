@@ -33,6 +33,14 @@ public class HomePage extends BasePage {
 
     }
 
+    public void testErik02() {
+
+        driver.findElement(By.id("user-name")).sendKeys(ConfigReader.readProperty("lockedUser"));
+        driver.findElement(By.id("password")).sendKeys(ConfigReader.readProperty("password"));
+        driver.findElement(By.id("login-button")).click();
+
+    }
+
 }
 
 
