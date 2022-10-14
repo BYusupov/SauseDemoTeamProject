@@ -7,24 +7,16 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.HomePage;
+import utils.ConfigReader;
 
 public class HomeTest extends BaseTest {
 
     HomePage page;
 
+
     @BeforeMethod
     public void setUp() {
         page = new HomePage(driver);
-    }
-
-    @Test(testName = "Google title test")
-    public void test01() {
-        page.assertEquals(driver.getTitle(), "Google");
-    }
-
-    @Test(testName = "Google title test")
-    public void burkhon() {
-        System.out.println("Burkhon");
     }
 
     @Test(testName = "US 301 - verify standard user can log in with right password")
@@ -33,6 +25,7 @@ public class HomeTest extends BaseTest {
         driver.findElement(By.id("user-name")).sendKeys("username");
         driver.findElement(By.id("password")).sendKeys("password");
         driver.findElement(By.id("login-button")).click();
+
 
     }
 
