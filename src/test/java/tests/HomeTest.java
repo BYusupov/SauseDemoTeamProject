@@ -7,10 +7,12 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.HomePage;
+import utils.ConfigReader;
 
 public class HomeTest extends BaseTest {
 
     HomePage page;
+
 
     @BeforeMethod
     public void setUp() {
@@ -30,8 +32,8 @@ public class HomeTest extends BaseTest {
     @Test(testName = "US 301 - verify standard user can log in with right password")
     public void testErik01() {
 
-        driver.findElement(By.id("user-name")).sendKeys("standard_user");
-        driver.findElement(By.id("password")).sendKeys("secret_sauce");
+        driver.findElement(By.id("user-name")).sendKeys(ConfigReader.readProperty("username"));
+        driver.findElement(By.id("password")).sendKeys(ConfigReader.readProperty("password"));
         driver.findElement(By.id("login-button")).click();
 
     }

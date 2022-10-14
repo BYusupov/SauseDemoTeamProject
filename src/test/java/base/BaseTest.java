@@ -10,7 +10,6 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import utils.ConfigReader;
 import utils.ExtentManager;
-
 import java.lang.reflect.Method;
 import java.util.concurrent.TimeUnit;
 
