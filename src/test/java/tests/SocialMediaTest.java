@@ -1,16 +1,11 @@
 package tests;
 
 import base.BaseTest;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.SocialMediaPage;
-
-import java.util.ArrayList;
-import java.util.Set;
 
 public class SocialMediaTest extends BaseTest {
     private SocialMediaPage page;
