@@ -1,2 +1,5 @@
 /target
 /.idea
+/configuration.properties
+./configuration.properties
+configuration.properties
