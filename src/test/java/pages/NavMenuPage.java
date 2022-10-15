@@ -3,13 +3,14 @@ package pages;
 import base.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class NavMenuPage304 extends BasePage {
-    public NavMenuPage304(WebDriver driver) {
+public class NavMenuPage extends BasePage {
+    public NavMenuPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
     }
@@ -25,7 +26,6 @@ public class NavMenuPage304 extends BasePage {
     @FindBy(id = "react-burger-menu-btn")
     public WebElement navBtn;
 
-    @FindBy(className = "bm-item menu-item")
+    @FindBy(xpath = "//nav/a")
     public List<WebElement> navBtns;
-
 }

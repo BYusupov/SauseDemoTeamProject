@@ -7,19 +7,19 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.HomePage;
-import pages.NavMenuPage304;
+import pages.NavMenuPage;
 import utils.ConfigReader;
 
 import java.util.List;
 
 public class ProblemUserTest extends BaseTest {
 
-    private NavMenuPage304 page;
+    private NavMenuPage page;
     HomePage homePage;
 
     @BeforeMethod(alwaysRun = true)
     public void setUp(){
-        page = new NavMenuPage304(driver);
+        page = new NavMenuPage(driver);
         homePage = new HomePage(driver);
     }
     @Test(testName = "US 303 - problem_user logs in, all items on homepage should display same images")
