@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+
 public class CartPage extends BasePage {
     public CartPage(WebDriver driver) {
         super(driver);
@@ -17,6 +19,9 @@ public class CartPage extends BasePage {
 
     @FindBy(id = "checkout")
     public WebElement checkoutBtn;
+
+    @FindBy(xpath = "//div[@class='checkout_info']")
+    public List<WebElement> checkoutInfo;
 
     @FindBy(id = "first-name")
     public WebElement firstNameField;

@@ -2,6 +2,7 @@ package tests;
 
 import base.BaseTest;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -23,9 +24,11 @@ public class CartTest extends BaseTest {
         homePage.testErik01();
         page.shoppingCartBtn.click();
         page.checkoutBtn.click();
-        page.firstNameField.isDisplayed();
-        page.lastNameField.isDisplayed();
-        page.zipField.isDisplayed();
+
+        for (WebElement eachField : page.checkoutInfo) {
+            eachField.getText();
+            Assert.assertTrue(eachField.isDisplayed());
+        }
     }
 
     @Test(testName = "US 309 - Add to cart")
@@ -44,5 +47,6 @@ public class CartTest extends BaseTest {
         page.addToCart.click();
         page.shoppingCartBtn.click();
         page.removeBtn.click();
+        Assert.assertTrue(true);
     }
 }
