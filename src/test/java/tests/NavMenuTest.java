@@ -2,14 +2,11 @@ package tests;
 
 import base.BasePage;
 import base.BaseTest;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Wait;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.NavMenuPage;
-
 
 public class NavMenuTest extends BaseTest {
 
