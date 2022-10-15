@@ -28,4 +28,7 @@ public class NavMenuPage extends BasePage {
 
     @FindBy(xpath = "//nav/a")
     public List<WebElement> navBtns;
+
+    @FindBy(className = "bm-menu")
+    public WebElement navMenus;
 }

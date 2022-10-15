@@ -3,6 +3,7 @@ package tests;
 import base.BaseTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -44,9 +45,11 @@ public class HomeTest extends BaseTest {
     }
 
     @Test(testName = "US 306 - Filter options")
-    public void US306() {
+    public void US306(){
+        String expected = "Name (A to Z)\n" + "Name (Z to A)\n" + "Price (low to high)\n" + "Price (high to low)";
         homePage.testErik01();
         homePage.filter.click();
+        Assert.assertEquals(homePage.filter.getText(),expected);
 
     }
 
