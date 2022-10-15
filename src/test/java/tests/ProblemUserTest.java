@@ -6,24 +6,29 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import pages.NavMenuPage304;
+import pages.HomePage;
+import pages.NavMenuPage;
+import utils.ConfigReader;
 
 import java.util.List;
 
 public class ProblemUserTest extends BaseTest {
 
-    private NavMenuPage304 page;
+    private NavMenuPage page;
+    HomePage homePage;
 
     @BeforeMethod(alwaysRun = true)
     public void setUp(){
-        page = new NavMenuPage304(driver);
+        page = new NavMenuPage(driver);
+        homePage = new HomePage(driver);
     }
     @Test(testName = "US 303 - problem_user logs in, all items on homepage should display same images")
     public void test303(){
         // login using problem_user
-        page.usernameInput.sendKeys("problem_user");
-        page.passwordInput.sendKeys("secret_sauce");
-        page.loginBtn.click();
+//        driver.findElement(By.id("user-name")).sendKeys("problem_user");
+//        driver.findElement(By.id("password")).sendKeys(ConfigReader.readProperty("password"));
+//        driver.findElement(By.id("login-button")).click();
+        homePage.testErik01();
 
         // verify all images are the same
         List<WebElement> imageList = driver.findElements(By.xpath("//a/img"));
