@@ -21,10 +21,6 @@ public class SocialMediaTest extends BaseTest {
     public void setUp() {
 
         homePage = new HomePage(driver);
-
-
-        driver.findElement(By.linkText("Saucedemo")).click();
-
         page = new SocialMediaPage(driver);
     }
 
@@ -39,21 +35,12 @@ public class SocialMediaTest extends BaseTest {
 //            Assert.assertTrue(eachMedia.isDisplayed());
 
 
-        // click on the icons
-        page.click(page.twitterbtn);
-        page.click(page.facebookbtn);
-        page.click(page.linkedinbtn);
-
-        //switching to each window
-        String mainWindowID = driver.getWindowHandle();
-        ArrayList<String> tab = new ArrayList<String>(driver.getWindowHandles());
-        Set<String> allWindowIDs = driver.getWindowHandles();
-
         // verify twitter, fb an In present
         Assert.assertTrue(page.twitterbtn.isDisplayed());
         Assert.assertTrue(page.facebookbtn.isDisplayed());
         Assert.assertTrue(page.linkedinbtn.isDisplayed());
 
+        }
     }
-}
+
 

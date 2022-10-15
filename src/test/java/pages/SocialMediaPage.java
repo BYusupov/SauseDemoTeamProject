@@ -14,8 +14,8 @@ public class SocialMediaPage extends BasePage {
         PageFactory.initElements(driver, this);
         }
 
-//        @FindBy(xpath = "ul[@class='social']")
-//        public List<WebElement> mediaIcons;
+        @FindBy(xpath = "ul[@class='social']")
+        public List<WebElement> mediaIcons;
         @FindBy(xpath = "//li[@class= 'social_twitter']")
         public WebElement twitterbtn;
 
