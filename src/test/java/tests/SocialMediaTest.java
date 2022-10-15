@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import pages.HomePage;
 import pages.SocialMediaPage;
 
 import java.util.ArrayList;
@@ -13,9 +14,15 @@ import java.util.Set;
 
 public class SocialMediaTest extends BaseTest {
     private SocialMediaPage page;
+    HomePage homePage;
 
     @BeforeMethod(alwaysRun = true)
+
     public void setUp() {
+
+        homePage = new HomePage(driver);
+
+
         driver.findElement(By.linkText("Saucedemo")).click();
 
         page = new SocialMediaPage(driver);
@@ -24,33 +31,29 @@ public class SocialMediaTest extends BaseTest {
     @Test(testName = "US 307 - Verify social media buttons present twitter, facebook and linkedIn")
     public void test307() {
 
+        homePage.testErik01();
+
         // another version
 //        for (WebElement eachMedia : page.mediaIcons) {
 //            eachMedia.getText();
 //            Assert.assertTrue(eachMedia.isDisplayed());
 
 
-            // click on the icons
+        // click on the icons
         page.click(page.twitterbtn);
         page.click(page.facebookbtn);
         page.click(page.linkedinbtn);
 
-            //switching to each window
+        //switching to each window
         String mainWindowID = driver.getWindowHandle();
         ArrayList<String> tab = new ArrayList<String>(driver.getWindowHandles());
         Set<String> allWindowIDs = driver.getWindowHandles();
 
-        for(String each: allWindowIDs){
-            if (!each.equals(mainWindowID)) {
-                driver.switchTo().window(each);
-                if(driver.getTitle().equals("SauceLabs(@saucelabs);Twitter")){
-                    break;
-                }
+        // verify twitter, fb an In present
+        Assert.assertTrue(page.twitterbtn.isDisplayed());
+        Assert.assertTrue(page.facebookbtn.isDisplayed());
+        Assert.assertTrue(page.linkedinbtn.isDisplayed());
 
-            }
-            Assert.assertTrue(true);
-        }
     }
-
 }
 
